@@ -1,0 +1,24 @@
+Check out our project here:
+https://docs.google.com/presentation/d/1ZSNDfGFfh9Brl1_nsxJAlwI9XTnZ28D6fGxl5WyLSSM/edit?usp=sharing
+
+Problem Statement
+We are attempting to generate novel melodies with a cohesive global structure using existing music data using a generative model from a deep neural network architecture. 
+
+Existing Techniques
+Prior to the paper which we are attempting to implement, previous research has generated music with only one melody, and no harmonies, chords, dotted notes, and rests. Eck’s paper, found in the Background and Related Work section of our paper, attempted to utilize two LSTM networks: one for chord structure and another for longer term dependencies in order to learn and retain a melody throughout the resultant piece of music. They failed, however, to create music that could go beyond a set number of chords that the architecture trains on and is unable to create more diverse combinations of notes. Another paper, Boulanger-Lewandowski, attempted to address the challenge of learning complex polyphonic structure in music, utilizing a recurrent temporal restricted Boltzman machine.
+
+Our Approach
+We will be using a two-layered Long Short Term Memory (LSTM) recurrent neural network (RNN) architecture to produce a character-level model to predict the next note in a sequence. We will be utilizing piano roll representations of the entire corpus of Bach music found on MuseData (http://www-etud.iro.umontreal.ca/~boulanni/icml2012). The files come in .pickle format (lol), a Python file format used to serialize data. 
+
+We can use different back-propagation methods including: 
+RNN
+RTRBM
+RNN - RBM
+RNN - NADE (Recurrent Neural Network - Neural Autoregressive Distribution Estimator)
+RNN - RBM and RNN - NADE produced the best quality music. We liked NADE better, so we will be implementing it. :)
+
+Our Results
+Our model will generate a new score in piano roll format (serialized .pickle format), which we can deserialize and put into a player to produce our music. 
+
+Future Plans and Work Needed.
+We need to set up our Long Short Term Memory architecture and our recurrent neural network on Colab. After we set it up, we can begin training our model using the music data found on MuseData. 
